@@ -1,11 +1,11 @@
 class EmpWageComputation
 {
-		//CONSTANTS
-		public static final int IS_FULL_TIME=1;
-		public static final int IS_PART_TIME=0;
-		public static final int EMP_RATE_PER_HRS=20;
-		public static final int NUM_WORKING_DAYS=20;	
-		public static final int MAX_HRS_IN_MONTH=100;
+	//CONSTANTS
+	public static final int IS_FULL_TIME=1;
+	public static final int IS_PART_TIME=0;
+	public static final int EMP_RATE_PER_HRS=20;
+	public static final int NUM_WORKING_DAYS=20;	
+	public static final int MAX_HRS_IN_MONTH=100;
 	public static void main(String args[])
 	{
 		System.out.println("Welcome to Employee Wage Computation");

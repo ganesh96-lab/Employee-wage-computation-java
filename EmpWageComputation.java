@@ -1,15 +1,14 @@
 class EmpWageComputation
 {
 	//CONSTANTS
-		public static final int IS_FULL_TIME=1;
-		public static final int IS_PART_TIME=0;
-		public static final int EMP_RATE_PER_HRS=20;
-		public static final int No_OF_WORKING_HRS=2;	
+	public static final int IS_FULL_TIME=1;
+	public static final int IS_PART_TIME=0;
+	public static final int EMP_RATE_PER_HRS=20;
+	public static final int No_OF_WORKING_HRS=2;	
 
 	public static void main(String args[])
 	{
 		System.out.println("Welcome to Employee Wage Computation");
-		
 		
 		//variables
 		int empHrs=0;
@@ -18,10 +17,8 @@ class EmpWageComputation
 		for(int day=1;day<=No_OF_WORKING_HRS;day++)
 		{
 			int empCheck=((int)Math.floor(Math.random()*10))%2; 
-		
 			switch(empCheck)
-			{ 
-			
+			{ 	
 				case IS_FULL_TIME:
 					empHrs=8;
 					break;
@@ -32,7 +29,6 @@ class EmpWageComputation
 					empHrs=0;
 			}      
 			empWage=empWage+empHrs*EMP_RATE_PER_HRS;
-		
 		}
 		System.out.println("Wages for month:"+empWage);
 	}

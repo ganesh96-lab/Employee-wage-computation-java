@@ -1,11 +1,18 @@
 class EmpWageComputation
 {
-		//CONSTANTS
-		public static final int IS_FULL_TIME=1;
-		public static final int IS_PART_TIME=0;
-		public static final int EMP_RATE_PER_HRS=20;
-		public static final int NUM_WORKING_DAYS=20;	
-		public static final int MAX_HRS_IN_MONTH=100;
+	//CONSTANTS
+	public static final int IS_FULL_TIME=1;
+	public static final int IS_PART_TIME=0;
+	public int EMP_RATE_PER_HRS;
+	public int NUM_WORKING_DAYS;	
+	public int MAX_HRS_IN_MONTH;
+
+	public EmpWageComputation(int EMP_RATE_PER_HRS,int NUM_WORKING_DAYS,int MAX_HRS_IN_MONTH)
+	{
+		this.EMP_RATE_PER_HRS=EMP_RATE_PER_HRS;
+		this.NUM_WORKING_DAYS=NUM_WORKING_DAYS;
+		this.MAX_HRS_IN_MONTH=MAX_HRS_IN_MONTH;
+	}
 	public void calEmpWages()
 	{
 		//variables
@@ -33,13 +40,14 @@ class EmpWageComputation
 		}
  		System.out.println("Employee Wage for month: " + totalEmpWage);
 	}
-
 	public static void main(String args[])
-	{
+	{ 
 		System.out.println("Welcome to Employee Wage Computation");
-		EmpWageComputation cmp=new EmpWageComputation();
-		cmp.calEmpWages();
-
+		EmpWageComputation bridgelabz=new EmpWageComputation(20,20,100);
+		EmpWageComputation capgemini=new EmpWageComputation(20,20,100);
+		EmpWageComputation accenture=new EmpWageComputation(20,20,100);
+		bridgelabz.calEmpWages();
+		capgemini.calEmpWages();
+		accenture.calEmpWages();
 	}
-	
 }

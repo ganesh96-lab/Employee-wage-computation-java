@@ -30,10 +30,11 @@ public class EmpWageComputation {
 		return MAX_HRS_IN_MONTH;
 	}
 
-	//COMPUTATION
 	public static int calEmpWages()
 	{
+		//variables
 		int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
+
 		while( totalEmpHrs <= getMaxHrsInMonth() &&
 				totalWorkingDays < getMaxWorkingDays() )  {
 			totalWorkingDays++;

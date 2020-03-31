@@ -1,4 +1,9 @@
-public class EmpWageComputation 
+interface WageComputable
+{
+	public void calEmpWages(CompanyEmpWage companyObj);
+}
+
+public class EmpWageComputation implements WageComputable
 {
 	//CONSTANTS
 	public final int IS_PART_TIME = 0;

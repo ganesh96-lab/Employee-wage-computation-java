@@ -1,4 +1,4 @@
-public class EmpWageComputation 
+public class EmpWageComputation
 {
 	//CONSTANTS
 	public final int IS_PART_TIME = 0;

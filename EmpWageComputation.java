@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 interface WageComputable
 {
 	public void calEmpWages(CompanyEmpWage companyObj);
@@ -38,7 +39,7 @@ public class EmpWageComputation implements WageComputable
 			//here store daily wages in arraylist
 			empDailyAndTotalWage.add(empDailyWage);
 			//print daily many work hours 
-			System.out.println("Day: " + totalWorkingDays + " Emp Hr: " +  empHrs+ " empDailyWage: "+empDailyWage);
+			//System.out.println("Day: " + totalWorkingDays + " Emp Hr: " +  empHrs+ " empDailyWage: "+empDailyWage);
 		}
 
 		// calculate total Wages
@@ -46,7 +47,7 @@ public class EmpWageComputation implements WageComputable
 		//here store the total wages in arraylist
 		empDailyAndTotalWage.add(empTotalWage);
 		company.setTotalEmpWage(empTotalWage);
-		System.out.println("Total Wage of " + company.getCompanyName() + " Employee is " + company.getTotalEmpWage());	
+		//System.out.println("Total Wage of " + company.getCompanyName() + " Employee is " + company.getTotalEmpWage());	
 	}
 
 	public static void main(String args[])
@@ -58,7 +59,32 @@ public class EmpWageComputation implements WageComputable
 		empwagecomputation.calEmpWages(companys.get(0));
 		
 		companys.add( new CompanyEmpWage("CAPGMINI",50, 15, 100));
-		empwagecomputation.calEmpWages(companys.get(1));	
+		empwagecomputation.calEmpWages(companys.get(1));
+			
+		
+		while(true)
+		{
+			System.out.println("Enter which companys you have to calculate total wages");
+			System.out.println("1 for BRIDGELABZ");
+			System.out.println("2 for CAPGMINI");
+			System.out.println("3 exit");
+			Scanner scanner=new Scanner(System.in);
+
+			int choice=scanner.nextInt();
+			switch(choice)
+			{
+				case 1:
+					System.out.println("total Employee wage of BRIDGELABZ is:"+companys.get(0).getTotalEmpWage());
+					break;
+				case 2:
+					System.out.println("total Emp Wage of CAPGMINI:"+companys.get(1).getTotalEmpWage());
+					break;
+				case 3:
+					System.exit(0);
+				default:
+					System.out.println("Invalid option");
+			}
+		}
 	}
 }
 

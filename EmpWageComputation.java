@@ -10,12 +10,12 @@ public class EmpWageComputation implements WageComputable
 	public final int IS_PART_TIME = 0;
 	public final int IS_FULL_TIME = 1;
 	
-	
+	ArrayList<Integer> empDailyAndTotalWage = new ArrayList<Integer> ();
 	public void calEmpWages(CompanyEmpWage company)
 	{
 		//variables
 		int empHrs = 0, totalEmpHrs = 0, 
-		totalWorkingDays = 0;
+		totalWorkingDays = 0,empDailyWage=0,empTotalWage=0;
 
 		while( totalEmpHrs <= company.getMaxHrsInMonth() && totalWorkingDays < company.getMaxWorkingDays() )
 		 {
@@ -34,11 +34,18 @@ public class EmpWageComputation implements WageComputable
 			}
 			//calculate total emp hrs
 			totalEmpHrs += empHrs;
+			empDailyWage=empHrs*company.getEmpRatePerHrs();
+			//here store daily wages in arraylist
+			empDailyAndTotalWage.add(empDailyWage);
 			//print daily many work hours 
-			System.out.println("Day: " + totalWorkingDays + " Emp Hr: " +  empHrs);
+			System.out.println("Day: " + totalWorkingDays + " Emp Hr: " +  empHrs+ " empDailyWage: "+empDailyWage);
 		}
+
 		// calculate total Wages
-		company.setTotalEmpWage(totalEmpHrs * company.getEmpRatePerHrs());
+		empTotalWage=totalEmpHrs * company.getEmpRatePerHrs();
+		//here store the total wages in arraylist
+		empDailyAndTotalWage.add(empTotalWage);
+		company.setTotalEmpWage(empTotalWage);
 		System.out.println("Total Wage of " + company.getCompanyName() + " Employee is " + company.getTotalEmpWage());	
 	}
 

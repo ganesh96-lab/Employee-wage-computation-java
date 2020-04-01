@@ -1,4 +1,10 @@
-public class EmpWageComputation
+import java.util.ArrayList;
+interface WageComputable
+{
+	public void calEmpWages(CompanyEmpWage companyObj);
+}
+
+public class EmpWageComputation implements WageComputable
 {
 	//CONSTANTS
 	public final int IS_PART_TIME = 0;
@@ -37,13 +43,13 @@ public class EmpWageComputation
 	public static void main(String args[])
 	{
 		EmpWageComputation empwagecomputation = new EmpWageComputation();
-		CompanyEmpWage[] companys=new CompanyEmpWage[2];
+		ArrayList<CompanyEmpWage> companys = new ArrayList<CompanyEmpWage>();
 
-		companys[0] = new CompanyEmpWage("BRIDGELABZ",20,20,100);
-		empwagecomputation.calEmpWages(companys[0]);
+		companys.add( new CompanyEmpWage("BRIDGELABZ",20,20,100));
+		empwagecomputation.calEmpWages(companys.get(0));
 		
-		companys[1]= new CompanyEmpWage("CAPGMINI",50, 15, 100 );
-		empwagecomputation.calEmpWages(companys[1]);	
+		companys.add( new CompanyEmpWage("CAPGMINI",50, 15, 100));
+		empwagecomputation.calEmpWages(companys.get(1));	
 	}
 }
 

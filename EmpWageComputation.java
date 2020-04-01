@@ -10,10 +10,12 @@ public class EmpWageComputation implements WageComputable
 	public final int IS_PART_TIME = 0;
 	public final int IS_FULL_TIME = 1;
 	
+	
 	public void calEmpWages(CompanyEmpWage company)
 	{
 		//variables
-		int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
+		int empHrs = 0, totalEmpHrs = 0, 
+		totalWorkingDays = 0;
 
 		while( totalEmpHrs <= company.getMaxHrsInMonth() && totalWorkingDays < company.getMaxWorkingDays() )
 		 {
